@@ -62,4 +62,4 @@ Refer to the hosting provider's documentation for deploying Vite-based React app
 
 ## License
 
-FlowList is open-source and free to use under the MIT License.
+FlowList is open-source and free to use.
