@@ -1,5 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, CheckSquare, BarChart3, Calendar, Settings, LogOut } from 'lucide-react';
+import {
+  Home,
+  CheckSquare,
+  BarChart3,
+  Calendar,
+  Settings,
+  LogOut,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -15,9 +22,11 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 h-screen bg-white/70 dark:bg-slate-900/70 backdrop-blur-lg border-r border-white/20 dark:border-slate-700/20 flex flex-col justify-between">
-      {/* Top: Logo & Navigation */}
+    <div className="w-64 h-screen flex flex-col justify-between bg-white/70 dark:bg-slate-900/70 backdrop-blur-lg border-r border-white/20 dark:border-slate-700/20 overflow-y-auto">
+      
+      {/* Top Section - Logo & Navigation */}
       <div className="p-6">
+        {/* Logo */}
         <div className="flex items-center space-x-3 mb-8">
           <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
             <CheckSquare className="h-5 w-5 text-white" />
@@ -30,6 +39,7 @@ const Sidebar = () => {
           </div>
         </div>
 
+        {/* Navigation */}
         <nav className="space-y-2">
           {navigation.map((item) => {
             const isActive = location.pathname === item.href;
@@ -38,10 +48,10 @@ const Sidebar = () => {
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                  'flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200',
                   isActive
-                    ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg shadow-purple-500/25"
-                    : "text-gray-700 dark:text-gray-300 hover:bg-white/50 dark:hover:bg-slate-800/50"
+                    ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg shadow-purple-500/25'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-white/50 dark:hover:bg-slate-800/50'
                 )}
               >
                 <item.icon className="h-5 w-5" />
@@ -52,14 +62,14 @@ const Sidebar = () => {
         </nav>
       </div>
 
-      {/* Bottom: Sign Out */}
+      {/* Bottom Section - Sign Out */}
       <div className="p-6">
         <Button
           variant="ghost"
           className="w-full justify-start text-gray-500 dark:text-gray-400 hover:bg-white/50 dark:hover:bg-slate-800/50"
           onClick={() => {
-            localStorage.removeItem("token");
-            window.location.href = "/login";
+            localStorage.removeItem('token');
+            window.location.href = '/login';
           }}
         >
           <LogOut className="h-5 w-5 mr-3" />
@@ -71,4 +81,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
