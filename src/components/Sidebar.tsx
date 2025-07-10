@@ -88,19 +88,7 @@ const Sidebar = ({ open = false, setOpen = () => {} } = {}) => {
         </div>
 
         {/* Sign Out */}
-        <div className="pt-6">
-          <Button
-            variant="ghost"
-            className="w-full justify-start text-gray-500 dark:text-gray-400 hover:bg-white/50 dark:hover:bg-slate-800/50"
-            onClick={() => {
-              localStorage.removeItem('token');
-              navigate('/login');
-            }}
-          >
-            <LogOut className="h-5 w-5 mr-3" />
-            Sign Out
-          </Button>
-        </div>
+        
       </div>
     </div>
   );
