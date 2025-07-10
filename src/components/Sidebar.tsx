@@ -15,7 +15,8 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 bg-white/70 dark:bg-slate-900/70 backdrop-blur-lg border-r border-white/20 dark:border-slate-700/20 min-h-screen">
+    <div className="w-64 h-screen bg-white/70 dark:bg-slate-900/70 backdrop-blur-lg border-r border-white/20 dark:border-slate-700/20 flex flex-col justify-between">
+      {/* Top: Logo & Navigation */}
       <div className="p-6">
         <div className="flex items-center space-x-3 mb-8">
           <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
@@ -49,19 +50,25 @@ const Sidebar = () => {
             );
           })}
         </nav>
+      </div>
 
-        <div className="absolute bottom-6 left-6 right-6">
-          <Button
-            variant="ghost"
-            className="w-full justify-start text-gray-500 dark:text-gray-400 hover:bg-white/50 dark:hover:bg-slate-800/50"
-          >
-            <LogOut className="h-5 w-5 mr-3" />
-            Sign Out
-          </Button>
-        </div>
+      {/* Bottom: Sign Out */}
+      <div className="p-6">
+        <Button
+          variant="ghost"
+          className="w-full justify-start text-gray-500 dark:text-gray-400 hover:bg-white/50 dark:hover:bg-slate-800/50"
+          onClick={() => {
+            localStorage.removeItem("token");
+            window.location.href = "/login";
+          }}
+        >
+          <LogOut className="h-5 w-5 mr-3" />
+          Sign Out
+        </Button>
       </div>
     </div>
   );
 };
 
 export default Sidebar;
+
