@@ -60,6 +60,11 @@ Refer to the hosting provider's documentation for deploying Vite-based React app
 
 ---
 
+## Contributors
+
+- [@username](https://github.com/Meghana-051) – Idea & Code
+
+
 ## License
 
 FlowList is open-source and free to use.
