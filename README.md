@@ -25,6 +25,19 @@ npm run dev
 ```
 
 ---
+## 📸 Screenshots
+
+1. **Resume Upload Page**  
+   ![](se1.jpg)
+
+2. **Resume Preview & Analyze Button**  
+   ![](se2.jpg)
+
+3. **Skills & Grammar Analysis**  
+   ![](se3.jpg)
+
+4. **Section Detection & Score**  
+   ![](se4.jpg)
 
 ## Features
 
